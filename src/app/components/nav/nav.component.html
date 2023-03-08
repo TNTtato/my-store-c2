@@ -1,0 +1,46 @@
+<div class="show-mobile">
+  <div class="info">
+    <button (click)="toggleMenu()">
+      <img src="../../../assets/svg/menu.svg" alt="menu-icon">
+    </button>
+    <a href="">
+      <img src="../../../assets/svg/angular-logo.svg" alt="angular-logo">
+    </a>
+    <div class="cart">
+      <a href="">
+        <img src="../../../assets/svg/shop-cart.svg" alt="shop-cart">
+      </a>
+      <span class="counter">{{ counter }}</span>
+    </div>
+  </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <button (click)="toggleMenu()">Close</button>
+    <ul>
+      <li><a href="">All</a></li>
+      <li *ngFor="let category of categories"><a href="">{{ category | capitalize}}</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img src="../../../assets/svg/angular-logo.svg" alt="angular-logo">
+      </a>
+      <ul>
+        <li><a href="">All</a></li>
+        <li *ngFor="let category of categories"><a href="">{{category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()}}</a></li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">penarandagustavo5@gmail.com</div>
+      <div class="cart">
+        <a href="">
+          <img src="../../../assets/svg/shop-cart.svg" alt="shop-cart">
+        </a>
+        <span class="counter">{{ counter }}</span>
+      </div>
+    </div>
+  </div>
+</div>
